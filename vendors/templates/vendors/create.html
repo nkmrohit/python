@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<header class="jumbotron my-4">
+    <div class="container" style="width:600px">
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>Vendor form </h2>
+                     {{error}}
+                 </div>
+            
+                <form id="Login" method="POST" action="{% url 'vcreate' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.errors }}
+                            <p>{{ field.label_tag }} </p>
+                            {{ field }}
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-primary">Create</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+</header>   
+{% endblock %}

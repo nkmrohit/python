@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="jumbotron my-4">
+<div class="container" style="width:700px">
+        <div class="login-form">
+        <div class="main-div">
+           <div class="panel">
+           <h2>Sign Up Form</h2>
+           <p>Please enter your email and password</p>
+           </div>
+            <form id="Login" method="POST" action="{% url 'signup'%}">
+                    {% csrf_token %}
+                    {% for field in form %}
+                      <p>
+                        {{ field.label_tag }}<br>
+                        {{ field }}
+                        {% if field.help_text %}
+                          <small style="color: grey">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                          <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                      </p>
+                    {% endfor %}
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            </div>
+        </div></div>
+        </header>
+        {% endblock %}        
