@@ -4,15 +4,17 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from customers.customerauth import views
-
+from customerauth import views
 
 urlpatterns = [
     path('', views.list, name='list'),
-    path('create/', views.Create, name='create'),
-    #path('list', views.list, name='list'),
-    #path('details/<int:product_id>', views.details, name="details"),
-    #path('edit/<int:product_id>', views.edit, name="edit"),
-    #path('delete/<int:product_id>', views.delete, name="delete"),
+    path('create/', views.create, name='custcreate'),
+    path('edit/', views.edit, name='custupdate'),
+    path('login/', views.login, name='custlogin'),
+    path('list', views.list, name='list'),
+    path('detail/<int:cst_id>', views.detail, name="details"),
+    path('edit/<int:cst_id>', views.edit, name="custedit"),
+    path('delete/<int:cst_id>', views.delete, name="delete"),
 
 
 

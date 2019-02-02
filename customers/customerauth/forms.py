@@ -11,12 +11,8 @@ class CustomersForm(forms.ModelForm):
     lname = forms.CharField(label='last Name', max_length=100)
     phone = forms.IntegerField(label='Phone Number')
     email = forms.EmailInput()
-    addess =forms.CharField(
-        label="Description",
-        max_length=2000,
-        widget=forms.Textarea(attrs={'placeholder': 'Description'}),
-        help_text='Write here your message!')
-    image = forms.ImageField(label='Upload image', max_length=100)
+    address = forms.Textarea()
+    #image = forms.ImageField(label='Upload image',)
     username = forms.CharField(label='Username', max_length=100)
     password = forms.CharField(label='Password', max_length=100)
     confirm_password = forms.CharField(label='Confirm Password', max_length=100)
@@ -28,8 +24,8 @@ class CustomersForm(forms.ModelForm):
     class Meta:
         """Meta definition for MODELNAMEform."""
         model = Customers
-        fields = ('fname','mname','lname','phone','email','address','image','username','password','confirm_password')
-        
+        fields = ('id','fname','mname','lname','phone','email','address','username','password','confirm_password','image')
+      
     def clean(self):
         cleaned_data = super(CustomersForm, self).clean()
         password = cleaned_data.get("password")

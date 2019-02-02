@@ -1,0 +1,28 @@
+{% extends 'base-customers.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-md-12">
+    <p>&nbsp;</p>
+    
+    <!-- Blog Post -->
+    <div class="card mb-8">
+       
+      <div class="card-footer text-muted card mb-4">
+       <p><b>First Name :</b> {{cstdetail.fname}}</p> 
+       <p><b>Middle Name :</b> {{cstdetail.mname}}</p> 
+       <p><b>Last Name :</b> {{cstdetail.lname}}</p> 
+       <p><b>Phone :</b> {{cstdetail.phone}}</p> 
+       <p><b>Email :</b> {{cstdetail.email}}</p> 
+       <p><b>Address :</b> {{cstdetail.address}}</p> 
+       <p><b>User Name :</b> {{cstdetail.username}}</p> 
+       <p><b>Password :</b> {{cstdetail.password}}</p> 
+       <p><b>Image :</b> <img class="card-img-top" src="{{ cstdetail.image.url }}" alt="Card image cap" width="100px" height="100px"></p> 
+
+
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %} 

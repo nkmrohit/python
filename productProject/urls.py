@@ -10,8 +10,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('', include('authUser.urls')),
     url('product/', include('products.urls')),
-    url('vendors/', include('vendors.urls')),
+    url(r'^vendors/', include('vendors.urls')),
     url(r'^customers/', include('customers.urls')),
-
+    url(r'superadmin', include('superadmin.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

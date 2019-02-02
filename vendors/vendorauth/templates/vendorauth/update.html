@@ -1,0 +1,33 @@
+{% extends 'base-vendors.html'%}
+{% load static %}
+
+{% block content %}
+<header class="jumbotron my-8">
+    <div class="container">
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>Customer form </h2>
+                    {{error}}
+                </div>
+                
+                <form id="Login" method="POST" action="{% url 'vendorupdate' %}{{id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.errors }}  
+                            <p>{{ field.label_tag }} </p>
+                            {{ field }}
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-primary">Update</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+</header>   
+{% endblock %}

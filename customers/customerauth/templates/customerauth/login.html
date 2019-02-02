@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="jumbotron my-4">
+       
+<div class="container" style="width:400px">
+        <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+           <h2>Customer Login Form</h2>
+           <p>Please enter your email and password</p>
+           {{error}}
+           </div>
+           <form id="Login" method="POST" action="{% url 'custlogin'%}">
+                {% csrf_token %}
+                <div class="form-group">
+        
+        
+                    <input type="username" name="username" class="form-control" id="inputEmail" placeholder="Please enter Name">
+        
+                </div>
+        
+                <div class="form-group">
+        
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Please enter password">
+        
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+        
+            </form>
+            </div>
+        </div></div>
+        </header>
+        {% endblock %}

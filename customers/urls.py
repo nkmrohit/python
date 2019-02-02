@@ -9,7 +9,7 @@ import authUser.views
 urlpatterns = [
 
     url('auth/', include('customerauth.urls')),
-
+    
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

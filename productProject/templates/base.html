@@ -27,27 +27,36 @@
               <a class="nav-link active" href="{% url 'home'%}">Home
               </a>
             </li>
-            <li class="nav-item">
+            <!--li class="nav-item">
                 <a class="nav-link " href="{% url 'list'%}">Products
                 </a>
-              </li>
+            </li -->
             {% if user.is_authenticated  %} 
-              <li class="nav-item">
+              <!--li class="nav-item">
                 <a class="nav-link" href="{% url 'create'%}"><span class="glyphicon glyphicon-plus"></span>Create</a>
-              </li>   
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'vcreate'%}"><span class="glyphicon glyphicon-plus"></span>Vendor Create</a>
-              </li> 
-                <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout'%}">Logout</a><p>Welcome {{ user.username }} !!!</p>
-                </li>    
+              </li -->   
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+            </li>
+            <li>
+              <p class="nav-link"> <strong>Welcome {{ user.username }}</strong> !!!</p>
+            </li>    
             {% else   %}
-                <li class="nav-item">
+             <li class="nav-item">
+                <a class="nav-link" href="/customers/auth/login/">Customer Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/vendors/auth/login/">Vendor Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/auth/login/">Admin Login</a>
+              </li>
+                <!-- li class="nav-item">
                     <a class="nav-link" href="{% url 'login'%}">login</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'signup'%}">sign Up</a>
-                  </li>
+                  </li -->
             {% endif %}
             
             

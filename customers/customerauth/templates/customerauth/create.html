@@ -1,21 +1,21 @@
-{% extends 'base.html'%}
+{% extends 'base-customers.html'%}
 {% load static %}
 
 {% block content %}
 <header class="jumbotron my-4">
-    <div class="container" style="width:600px">
+    <div class="container" >
         <div class="login-form">
             <div class="main-div">
                 <div class="panel">
                     <h2>Customer form </h2>
-                     {{error}}
-                 </div>
+                    {{error}}
+                </div>
             
-                <form id="Login" method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+                <form id="Login" method="POST" action="{% url 'custcreate' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         <div class="form-group">
-                            {{ field.errors }}
+                            {{ field.errors }}  
                             <p>{{ field.label_tag }} </p>
                             {{ field }}
                             {% if field.help_text %}

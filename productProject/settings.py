@@ -34,7 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'customers.customerauth.apps.CustomerauthConfig',
-    'vendors.apps.VendorConfig',
+    'vendors.vendorauth.apps.VendorauthConfig',
+    'superadmin.adminauth.apps.AdminauthConfig',
     'authUser.apps.AuthuserConfig',
     'products.apps.ProductsConfig',
     'django.contrib.admin',
