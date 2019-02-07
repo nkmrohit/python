@@ -4,9 +4,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from superadmin.adminauth import views
+from crudbuilder import urls
 
 urlpatterns = [
     path('', views.list, name='adminlist'),
+    url(r'^crud/',  include(urls)),
     #path('login/', views.login, name='vendorlogin'),
     #path('create/', views.create, name='vendorcreate'),
     #path('edit/', views.edit, name='vendorupdate'),

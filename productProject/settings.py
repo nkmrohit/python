@@ -38,12 +38,15 @@ INSTALLED_APPS = [
     'superadmin.adminauth.apps.AdminauthConfig',
     'authUser.apps.AuthuserConfig',
     'products.apps.ProductsConfig',
+    'crudtest.apps.CrudtestConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
+    'crudbuilder',
 ]
 
 MIDDLEWARE = [
@@ -55,9 +58,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-LOGIN_REQUIRED_FOR_CRUD = False
-PERMISSION_REQUIRED_FOR_CRUD = False
+LOGIN_REQUIRED_FOR_CRUD = True
+PERMISSION_REQUIRED_FOR_CRUD = True
 PROJECT_NAME = 'productProject'
+
 
 ROOT_URLCONF = 'productProject.urls'
 
@@ -89,6 +93,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'NAME': 'python',
+#        'ENGINE': 'mysql.connector.django',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'OPTIONS': {
+#          'autocommit': True,
+#        },
+#    }
+#}
 
 
 # Password validation
